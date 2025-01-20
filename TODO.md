@@ -1,0 +1,6 @@
+- Support (or not) for higher framerates
+- Fallbacks!
+- Pause button
+- Lighthouse / accessibility
+- BEM CSS
+- Dark mode
