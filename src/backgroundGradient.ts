@@ -157,8 +157,8 @@ function compileShader(webgl: WebGLRenderingContext, type: GLenum, source: strin
   return shader;
 }
 
-function createProgram(webgl: WebGLRenderingContext, vertexShader: WebGLShader, fragmentShader: WebGLShader) {
-  const program = webgl.createProgram();
+function createProgram(webgl: WebGLRenderingContext, vertexShader: WebGLShader, fragmentShader: WebGLShader): WebGLProgram {
+  const program = webgl.createProgram() as WebGLProgram;
   webgl.attachShader(program, vertexShader);
   webgl.attachShader(program, fragmentShader);
   webgl.linkProgram(program);
