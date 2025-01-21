@@ -20,3 +20,11 @@ export function hexToRgb(hex: string): Colour {
 export async function delay(time: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
 }
+
+export function times<Type>(count: number, callback: (i: number) => Type) {
+  const result: Type[] = [];
+  for (let i = 0; i < count; i++) {
+    result.push(callback(i));
+  }
+  return result;
+}

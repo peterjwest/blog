@@ -1,5 +1,6 @@
-import { times } from 'lodash';
 import MersenneTwister from 'mersenne-twister';
+
+import { times } from './util';
 
 interface WaveSettingLocation {
   intensity: WebGLUniformLocation
