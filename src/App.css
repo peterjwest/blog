@@ -4,6 +4,7 @@
   --gray3: #776e63;
   --selection: rgba(36, 216, 195, 0.5);
   --glass: hue-rotate(-15deg) brightness(1.06) blur(10px);
+  --bright: contrast(1.1) hue-rotate(60deg) brightness(1.04);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,7 +35,7 @@ html {
 
 a {
   color: inherit;
-  border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1.5px solid rgba(0, 0, 200, 0.2);
   text-decoration: none;
 }
 
@@ -102,13 +103,13 @@ p {
 .menu {
   padding: 8px 18px;
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
+  border-radius: 9px;
 }
 
 @supports (backdrop-filter: brightness(1.1)) {
   .menu {
     background: none;
-    backdrop-filter: var(--glass);
+    backdrop-filter: var(--bright);
     overflow: hidden;
   }
 }
@@ -202,13 +203,13 @@ p {
 .footer_inner {
   padding: 8px 18px;
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
+  border-radius: 9px;
 }
 
 @supports (backdrop-filter: brightness(1.1)) {
   .footer_inner {
     background: none;
-    backdrop-filter: var(--glass);
+    backdrop-filter: var(--bright);
     overflow: hidden;
   }
 }
