@@ -100,6 +100,11 @@ p {
   margin-bottom: 36px;
 }
 
+.header_actions {
+  display: flex;
+  padding: 6px 4px;
+}
+
 .menu {
   padding: 8px 18px;
   background: rgba(255, 255, 255, 0.2);
@@ -212,4 +217,17 @@ p {
     backdrop-filter: var(--bright);
     overflow: hidden;
   }
+}
+
+.PauseButton {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.PauseButton_image {
+  height: 22px;
 }

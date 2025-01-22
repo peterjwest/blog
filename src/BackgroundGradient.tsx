@@ -12,7 +12,12 @@ import {
 /** Number of frames per render */
 const FRAME_INTERVAL = 1;
 
-export default function BackgroundGradient({ colours }: { colours: Colour[] }) {
+interface BackgroundGradientProps {
+  colours: Colour[];
+  paused: boolean;
+}
+
+export default function BackgroundGradient({ colours, paused }: BackgroundGradientProps) {
   const canvasRef: MutableRefObject<HTMLCanvasElement | null> = useRef(null);
 
   const windowSize = useWindowSize();
@@ -38,16 +43,16 @@ export default function BackgroundGradient({ colours }: { colours: Colour[] }) {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (canvas && backgroundSettings) {
+    if (canvas && backgroundSettings && !lowPower && !paused) {
       resizeBackground(canvas, backgroundSettings.locations);
     }
-  }, [backgroundSettings, windowSize]);
+  }, [backgroundSettings, windowSize, lowPower, paused]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     let i = 0;
 
-    if (canvas && backgroundSettings && tabVisible && !lowPower) {
+    if (canvas && backgroundSettings && tabVisible && !lowPower && !paused) {
       const render = () => {
         if (i++ % FRAME_INTERVAL === 0) {
           renderBackground(canvas, colours, backgroundSettings, FRAME_INTERVAL);
@@ -57,7 +62,7 @@ export default function BackgroundGradient({ colours }: { colours: Colour[] }) {
       let frameRef = requestAnimationFrame(render);
       return () => { cancelAnimationFrame(frameRef); }
     }
-  }, [colours, backgroundSettings, tabVisible, lowPower]);
+  }, [colours, backgroundSettings, tabVisible, lowPower, paused]);
 
   return (
     <canvas className="background" ref={canvasRef}></canvas>

@@ -5,6 +5,7 @@ import FpsCounter from './FpsCounter.tsx';
 import ColourPicker from './ColourPicker.tsx';
 import BackgroundGradient from './BackgroundGradient.tsx';
 import BackgroundGrain from './BackgroundGrain.tsx';
+import PauseButton from './PauseButton.tsx';
 import './App.css';
 
 const BASE_COLOURS: Colour[] = [
@@ -28,6 +29,7 @@ const BASE_COLOURS: Colour[] = [
 
 function App() {
   const [colours, setColours] = useState<Colour[]>(BASE_COLOURS);
+  const [paused, setPaused] = useState(false);
 
   return (
     <>
@@ -38,6 +40,9 @@ function App() {
 
       <main className="page">
         <header className="header">
+          <div className="header_actions">
+            <PauseButton paused={paused} setPaused={setPaused} />
+          </div>
           <nav className="menu">
             <ul className="menu_list">
               <li className="menu_item"><a href="writing">Writing</a></li>
@@ -100,7 +105,7 @@ function App() {
         </footer>
       </main>
 
-      <BackgroundGradient colours={colours} />
+      <BackgroundGradient colours={colours} paused={paused} />
       <BackgroundGrain />
     </>
   );
