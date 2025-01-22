@@ -231,3 +231,16 @@ p {
 .PauseButton_image {
   height: 22px;
 }
+
+.NightModeButton {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.NightModeButton_image {
+  height: 22px;
+}

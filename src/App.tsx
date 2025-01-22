@@ -7,6 +7,7 @@ import BackgroundGradient from './BackgroundGradient.tsx';
 import BackgroundGrain from './BackgroundGrain.tsx';
 import PauseButton from './PauseButton.tsx';
 import './App.css';
+import NightModeButton from './NightModeButton.tsx';
 
 const BASE_COLOURS: Colour[] = [
   [163, 232, 255],
@@ -30,6 +31,7 @@ const BASE_COLOURS: Colour[] = [
 function App() {
   const [colours, setColours] = useState<Colour[]>(BASE_COLOURS);
   const [paused, setPaused] = useState(false);
+  const [nightMode, setNightMode] = useState(false);
 
   return (
     <>
@@ -41,6 +43,7 @@ function App() {
       <main className="page">
         <header className="header">
           <div className="header_actions">
+            <NightModeButton nightMode={nightMode} setNightMode={setNightMode} />
             <PauseButton paused={paused} setPaused={setPaused} />
           </div>
           <nav className="menu">
