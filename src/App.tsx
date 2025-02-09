@@ -35,10 +35,10 @@ function App() {
 
   return (
     <>
-      <section className="meta">
+      {/* <section className="meta">
         <ColourPicker colours={colours} setColours={setColours} />
         <FpsCounter />
-      </section>
+      </section> */}
 
       <main className="page">
         <header className="header">
