@@ -35,7 +35,7 @@ function App() {
 
   return (
     <>
-      <section className="fps">
+      <section className="meta">
         <ColourPicker colours={colours} setColours={setColours} />
         <FpsCounter />
       </section>

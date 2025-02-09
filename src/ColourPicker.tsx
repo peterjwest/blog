@@ -15,10 +15,10 @@ export default function ColourPicker({ colours, setColours }: ColourPickerProps)
   }
 
   return (
-    <>
+    <div className="ColorPicker">
       {colours.map((colour, i) => (
-        <input key={i} className="fps_color" type="color" onChange={onChange(i)} value={rgbToHex(colour)} />
+        <input key={i} className="ColorPicker_color" type="color" onChange={onChange(i)} value={rgbToHex(colour)} />
       ))}
-    </>
+    </div>
   );
 }

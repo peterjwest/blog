@@ -180,15 +180,16 @@ p {
   z-index: -999;
 }
 
-.fps {
+.meta {
   position: absolute;
-  font-size: 0.8em;
   top: 0;
   left: 0;
+  display: flex;
   padding: 6px;
+  font-size: 0.8em;
 }
 
-.fps_color {
+.ColorPicker_color {
   border: none;
   background: none;
 }
